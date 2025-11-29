@@ -1,0 +1,152 @@
+@font-face {
+    font-family: f1;
+    src: url(Gilroy-Medium.ttf);
+}
+
+@font-face {
+    font-family: f3;
+    src: url(KaushanScript-Regular.ttf);
+}
+body {
+    background-color: #fefefe;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; 
+}
+
+.back-to-home {
+    position: fixed;
+    top: 30px; 
+    left: 30px; 
+    z-index: 100; 
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%; 
+    background-color: #14cf93; 
+    color: #111; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-home:hover {
+    background-color: #0fa676;
+    transform: scale(1.1);
+}
+
+.back-to-home i {
+    color: inherit; 
+    margin: 0;
+}
+@media (max-width: 992px) {
+    .back-to-home {
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+.container {
+    max-width: 900px;
+    text-align: center;
+    padding: 15px;
+    color: black;
+}
+
+
+h1 {
+    font-family: f1;
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 0.5em; 
+    font-size: 6rem; 
+    text-transform: lowercase;
+}
+
+h1 a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+h1 a:hover {
+    filter: brightness(1.2);
+}
+
+.mail {
+    color: #ff6e6e;
+    font-family: f3;
+}
+
+.whatsapp{
+    color: #3ff00a;
+    font-family: f3;
+}
+
+.pinterest {
+    color: #f70101;
+    font-family: f3;
+}
+
+.footer {
+    font-family: f1;
+    color: rgb(0, 0, 0);
+    font-size: 2rem; 
+    font-weight: 400;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.heart {
+    color: #ff6e6e;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 40px; 
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem; 
+        display: block; 
+        margin-top: 0.5em;
+    }
+
+    h1 a {
+        display: block;
+        margin: 0.5em 0; 
+        font-size: 1em; 
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    body {
+        font-size: 14px; 
+    }
+
+    .footer {
+        bottom: 10px;
+        font-size: 0.7rem;
+    }
+}

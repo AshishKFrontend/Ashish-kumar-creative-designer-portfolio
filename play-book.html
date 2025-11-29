@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook | Ashish Kumar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Define common variables if they weren't in style.css */
+        :root {
+            --color-primary: #14cf93; /* Green */
+            --color-secondary: #111; /* Black */
+            --color-tertiary: #fff; /* White */
+            --padding-x-desktop: 8vw; /* Placeholder for desktop padding */
+            --font-weight-bold: 700;
+            --font-weight-regular: 400;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background-color: #0fa676;
+            transform: scale(1.1);
+        }
+
+        .back-to-home i {
+            color: inherit;
+            margin: 0;
+        }
+
+        /* Existing Media Query for tablet/medium screens */
+        @media (max-width: 992px) {
+            .back-to-home {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+        }
+
+        #playbook-content {
+            padding: 10vw var(--padding-x-desktop);
+            background-color: var(--color-tertiary);
+            /* White background */
+            color: var(--color-secondary);
+            /* Black text */
+        }
+
+        .playbook-section {
+            margin-bottom: 8vw;
+        }
+
+        .playbook-section h2 {
+            font-size: 4vw;
+            margin-bottom: 4vw;
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            padding-bottom: 0.9vw;
+        }
+
+        .playbook-section p,
+        .playbook-section li {
+            font-size: 1.5vw;
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 80%;
+            padding-bottom: 0.9vw;
+        }
+
+        .playbook-section ul {
+            
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5vw;
+        }
+
+        .playbook-section ul li {
+            margin-bottom: 1vw;
+            font-weight: var(--font-weight-regular);
+            opacity: 1;
+        }
+
+        .playbook-section ul li i {
+            color: var(--color-primary);
+            margin-right: 1vw;
+            font-size: 1.5vw;
+        }
+
+        /* --- NEW RESPONSIVE IMPROVEMENTS (Mobile/Small Screens) --- */
+        @media (max-width: 600px) {
+            /* 1. Reset Content Padding */
+            #playbook-content {
+                /* Set a fixed, readable padding for small screens */
+                padding: 15vw 6vw; 
+            }
+
+            /* 2. Fix H1 Typography (Prevent text from being too small) */
+            #playbook-content h1 {
+                font-size: 10vw; 
+                margin-bottom: 8vw;
+            }
+
+            /* 3. Fix Section Typography (Ensure readability) */
+            .playbook-section h2 {
+                font-size: 7vw;
+                margin-bottom: 5vw;
+                padding-bottom: 2vw;
+            }
+
+            /* 4. Fix Paragraph and List Item Readability */
+            .playbook-section p,
+            .playbook-section li {
+                /* Use a fixed unit (rem) for body text readability */
+                font-size: 1.1rem; 
+                line-height: 1.5;
+                max-width: 100%; /* Allow content to use full width */
+                padding-bottom: 1rem;
+            }
+
+            .playbook-section ul li i {
+                font-size: 1.1rem; 
+                margin-right: 0.8rem;
+            }
+
+            /* 5. Adjust Footer Layout - assumes flex or grid is used in style.css */
+            #footertop {
+                 /* You would need to ensure the parent is a flex/grid container in style.css */
+                display: flex; 
+                flex-direction: column; 
+                gap: 5vw;
+            }
+            
+            /* Ensure the contact animation iframe is contained */
+            #visual-iframe {
+                width: 100% !important;
+                height: 100px; /* Adjusted fixed height for mobile */
+                min-height: 100px; 
+            }
+
+            /* 6. Smaller back-to-home button for very small screens */
+            .back-to-home {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        /* --- END NEW RESPONSIVE IMPROVEMENTS --- */
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <a href="index.html" class="back-to-home">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+        </a>
+        <div id="playbook-content" data-scroll-container>
+
+            <h1 style="font-size: 8vw; font-weight: var(--font-weight-bold); margin-bottom: 5vw;">
+                My <span class="mak">Design Playbook</span>
+            </h1>
+
+            <div class="playbook-section">
+                <h2 class="reveal">Design Philosophy</h2>
+                <p class="reveal">
+                    I believe that great design is that which is **unconventional** yet **intuitive** and **functional**
+                    for the user. I prioritize Simplicity and Accessibility.
+                </p>
+            </div>
+
+            <div class="playbook-section">
+                <h2 class="reveal">The Process</h2>
+                <p class="reveal">
+                    Every successful project follows a systematic process. Here is my 5-step process:
+                </p>
+                <ul>
+                    <li class="reveal"><i class="fa-solid fa-lightbulb"></i> **Discovery & Research:** Understanding the
+                        problem and identifying user needs.</li>
+                    <li class="reveal"><i class="fa-solid fa-sitemap"></i> **Strategy & Wireframing:** Defining the
+                        structure and user flow.</li>
+                    <li class="reveal"><i class="fa-solid fa-palette"></i> **Visual Design & Prototyping:** Creating
+                        high-fidelity mockups and interactive prototypes.</li>
+                    <li class="reveal"><i class="fa-solid fa-code"></i> **Handoff & Collaboration:** Providing clear
+                        guidelines and assets to developers.</li>
+                    <li class="reveal"><i class="fa-solid fa-recycle"></i> **Testing & Iteration:** Taking feedback from
+                        real users and refining the design.</li>
+                </ul>
+            </div>
+
+            <div class="playbook-section">
+                <h2 class="reveal">Tools & Expertise</h2>
+                <p class="reveal">
+                    I use the following tools to bring projects to life:
+                </p>
+                <ul>
+                    <li class="reveal"><i class="fa-solid fa-pen-nib"></i> **UI/UX Design:** Figma (Primary Tool), Adobe
+                        Creative Suite.</li>
+                    <li class="reveal"><i class="fa-solid fa-film"></i> **Animation & Motion:** GSAP, After Effects.
+                    </li>
+                    <li class="reveal"><i class="fa-solid fa-laptop-code"></i> **Front-End:** HTML5, CSS3, JavaScript,
+                        SCSS/Sass.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <div id="footertop">
+                <div id="footer-contact">
+                    <h5 class="reveal">Got a project?</h5>
+                    <iframe id="visual-iframe" src="Let's talk!-animation.html" alt="Animated Visual" frameborder="0"
+                        scrolling="no" style="width: 590px; height: 143px; display: block;"></iframe>
+                </div>
+                <div id="footer-info">
+                    <h5 class="reveal">Ashish Kumar</h5>
+                    <p class="reveal">Creative Designer based in India, building unconventional yet functional
+                        interfaces.</p>
+                </div>
+            </div>
+            <div id="footerbottom">
+                <a href="#" class="reveal">Privacy Policy</a>
+                <div id="socials">
+                    <a href="kashish80953@gmail.com"><i class="fa-brands fa-instagram fa-bounce"
+                            style="color: #fb00ff;"></i></a>
+                    <a href="kashish80953@gmail.com"><i class="fa-brands fa-pinterest-p fa-bounce"
+                            style="color: #f00000;"></i></a>
+                    <a href="https://github.com/AshishKFrontend"><i class="fa-brands fa-github fa-bounce"
+                            style="color: #fff;"></i></a>
+                    <a href="https://www.youtube.com/@msoffice-v3q"><i class="fa-brands fa-youtube fa-bounce"
+                            style="color: #f90101;"></i></a>
+                    <a href="https://www.whatsapp.com/channel/0029Va4RWD5LtOjKsNTwQG2p"><i
+                            class="fa-brands fa-whatsapp fa-bounce" style="color: #2bff00;"></i></a>
+                </div>
+                <h5 class="reveal">&copy; 2025 ALL RIGHTS RESERVED</h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#main'),
+            smooth: true
+        });
+
+        function revealTospan() {
+            document.querySelectorAll(".reveal")
+                .forEach(function (elem) {
+                    var Parent = document.createElement("span");
+                    var Child = document.createElement("span");
+
+                    Parent.classList.add("parent");
+                    Child.classList.add("child");
+
+                    Child.innerHTML = elem.innerHTML;
+
+                    Parent.appendChild(Child);
+
+                    elem.innerHTML = "";
+                    elem.appendChild(Parent);
+                })
+        }
+        revealTospan();
+
+        gsap.set("#nav a", { y: "-100%", opacity: 0 });
+        gsap.set(".playbook-section .reveal", { y: "100%" });
+        gsap.set("#footer .reveal", { y: "100%", opacity: 0 });
+
+        var tl = gsap.timeline({ delay: 0.5 });
+        tl
+            .to("#nav a", {
+                y: 0,
+                opacity: 1,
+                stagger: 0.1,
+                ease: Expo.easeInOut,
+                duration: 1
+            })
+            .to("#playbook-content .reveal .parent .child", {
+                y: 0,
+                stagger: 0.05,
+                ease: Expo.easeInOut,
+                duration: 1.5
+            }, "-=1")
+            .to("#footer .reveal", {
+                y: 0,
+                opacity: 1,
+                stagger: 0.05,
+                ease: Expo.easeInOut,
+                duration: 1
+            }, "-=1");
+
+    </script>
+</body>
+
+</html>
